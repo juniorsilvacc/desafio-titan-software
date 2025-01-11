@@ -17,32 +17,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar Funcionário</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <form method="POST" action="cadastrar_funcionario_action.php">
-        <h2>Cadastrar Funcionário</h2>
+    <div class="form-wrapper">
+        <form method="POST" action="cadastrar_funcionario_action.php" class="form-container">
+            <div>
+                <a href="dashboard.php" class="btn-back">
+                    Voltar para o Dashboard
+                </a>
+            </div>
 
-        <?php if ($erro): ?>
-            <p style="color:red;"><?php echo $erro; ?></p>
-        <?php endif; ?>
+            <h2>Cadastrar Funcionário</h2>
 
-        <?php if ($sucesso): ?>
-            <p style="color:green;"><?php echo $sucesso; ?></p>
-        <?php endif; ?>
+            <?php if ($erro): ?>
+                <p class="error"><?php echo $erro; ?></p>
+            <?php endif; ?>
 
-        <input type="text" name="nome" placeholder="Nome" required>
-        <input type="text" name="cpf" placeholder="CPF" required>
-        <input type="text" name="rg" placeholder="RG">
-        <input type="email" name="email" placeholder="E-mail" required>
-        <select name="id_empresa" required>
-            <option value="">Selecione a Empresa</option>
-            <?php foreach ($empresas as $empresa): ?>
-                <option value="<?= $empresa['id_empresa'] ?>"><?= $empresa['nome'] ?></option>
-            <?php endforeach; ?>
-        </select>
-        <input type="number" name="salario" placeholder="Salário" step="0.01" required>
-        
-        <button type="submit">Cadastrar</button>
-    </form>
+            <?php if ($sucesso): ?>
+                <p class="success"><?php echo $sucesso; ?></p>
+            <?php endif; ?>
+
+            <div class="form-group">
+                <input type="text" name="nome" placeholder="Nome" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="cpf" placeholder="CPF" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="rg" placeholder="RG">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="E-mail" required>
+            </div>
+            <div class="form-group">
+                <select name="id_empresa" required>
+                    <option value="">Selecione a Empresa</option>
+                    <?php foreach ($empresas as $empresa): ?>
+                        <option value="<?= $empresa['id_empresa'] ?>"><?= $empresa['nome'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="number" name="salario" placeholder="Salário" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+
 </body>
 </html>

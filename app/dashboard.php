@@ -22,16 +22,26 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+    <div class="container">
+        <h1>Bem-vindo, <?php echo htmlspecialchars($user['login']); ?></h1>
 
-    <h1>Bem-vindo, <?php echo htmlspecialchars($user['login']); ?>!</h1>
+        <h2>Dashboard</h2>
+        <p>Gerencie suas empresas e funcionários.</p>
 
-    <h2>Funcionários</h2>
-    <a href="cadastrar_empresa.php">Cadastrar Empresa</a>
-    <a href="cadastrar_funcionario.php">Cadastrar Funcionário</a>
+        <div class="actions">
+            <div class="top-actions">
+                <a href="cadastrar_empresa.php">Cadastrar Empresa</a>
+                <a href="cadastrar_funcionario.php">Cadastrar Funcionário</a>
+            </div>
 
-    <p>Você está logado no sistema.</p>
+            <div class="bottom-actions">
+                <a href="listar_funcionarios.php" class="list-button">Listar Funcionários</a>
+            </div>
+        </div>
 
-    <p><a href="logout_action.php">Sair</a></p>
-
+        <div class="logout">
+            <p><a href="logout_action.php">Sair</a></p>
+        </div>
+    </div>
 </body>
 </html>

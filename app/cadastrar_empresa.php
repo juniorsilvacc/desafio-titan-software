@@ -4,7 +4,6 @@
     $erro = isset($_SESSION['erro']) ? $_SESSION['erro'] : null;
     $sucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso'] : null;
 
-    // Limpa as mensagens após exibição
     unset($_SESSION['erro']);
     unset($_SESSION['sucesso']);
 ?>
@@ -14,17 +13,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar Empresa</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <form method="POST" action="cadastrar_empresa_action.php">
-        <h2>Cadastrar Empresa</h2>
+    <div class="form-wrapper">
+        <form method="POST" action="cadastrar_empresa_action.php" class="form-container">
+            <div>
+                <a href="dashboard.php" class="btn-back">
+                    Voltar para o Dashboard
+                </a>
+            </div>
 
-        <?php if (isset($erro)) echo "<p style='color:red;'>$erro</p>"; ?>
-        <?php if (isset($sucesso)) echo "<p style='color:green;'>$sucesso</p>"; ?>
+            <h2>Cadastrar Empresa</h2>
 
-        <input type="text" name="nome" placeholder="Nome da Empresa" required>
+            <?php if ($erro): ?>
+                <p class="error"><?php echo $erro; ?></p>
+            <?php endif; ?>
 
-        <button type="submit">Cadastrar</button>
-    </form>
+            <?php if ($sucesso): ?>
+                <p class="success"><?php echo $sucesso; ?></p>
+            <?php endif; ?>
+
+            <div class="form-group">
+                <input type="text" name="nome" placeholder="Nome da Empresa" required>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
