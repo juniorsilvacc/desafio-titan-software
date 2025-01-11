@@ -27,6 +27,7 @@
 
     <h2>Funcionários</h2>
     <a href="cadastrar_empresa.php">Cadastrar Empresa</a>
+    <a href="cadastrar_funcionario.php">Cadastrar Funcionário</a>
 
     <p>Você está logado no sistema.</p>
 
