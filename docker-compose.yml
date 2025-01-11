@@ -6,7 +6,7 @@ services:
     ports:
       - "8080:80"  # Mapeia a porta 80 do container para a porta 8080 do host
     volumes:
-      - ./app:/var/www/html  # Mapeia a pasta 'app' para o diretório do Apache no container
+      - ./app:/var/www/html/app  # Mapeia a pasta 'app' para o diretório do Apache no container
     depends_on:
       - mysql  # Garante que o MySQL inicie primeiro
 
