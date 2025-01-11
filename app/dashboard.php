@@ -1,17 +1,17 @@
 <?php
-session_start();
-require 'config/conexao.php';
+    session_start();
+    require 'config/conexao.php';
 
-// Verifique se o usuário está logado
-if (!isset($_SESSION['user_id'])) {
-    header('Location: index.php');
-    exit;
-}
+    // Verifique se o usuário está logado
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: index.php');
+        exit;
+    }
 
-// Recupera as informações do usuário a partir do banco, se necessário
-$stmt = $pdo->prepare("SELECT * FROM tbl_usuario WHERE id_usuario = :id_usuario");
-$stmt->execute(['id_usuario' => $_SESSION['user_id']]);
-$user = $stmt->fetch();
+    // Recupera as informações do usuário a partir do banco, se necessário
+    $stmt = $pdo->prepare("SELECT * FROM tbl_usuario WHERE id_usuario = :id_usuario");
+    $stmt->execute(['id_usuario' => $_SESSION['user_id']]);
+    $user = $stmt->fetch();
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +24,9 @@ $user = $stmt->fetch();
 <body>
 
     <h1>Bem-vindo, <?php echo htmlspecialchars($user['login']); ?>!</h1>
+
+    <h2>Funcionários</h2>
+    <a href="cadastrar_empresa.php">Cadastrar Empresa</a>
 
     <p>Você está logado no sistema.</p>
 
