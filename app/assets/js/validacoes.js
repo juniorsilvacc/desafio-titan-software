@@ -5,13 +5,13 @@ function validarLogin() {
     var erroMsg = "";
     
     // Verificação se o email está no formato correto
-    var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regex.test(email)) {
-        erroMsg = "Por favor, insira um email válido.";
+        erroMsg += "Por favor, insira um email válido.\n";
     }
     
     if (senha === "") {
-        erroMsg = "Por favor, insira a senha.";
+        erroMsg += "Por favor, insira a senha.";
     }
 
     if (erroMsg !== "") {
