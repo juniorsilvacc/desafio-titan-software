@@ -26,7 +26,11 @@
 
                 $_SESSION['sucesso'] = "Funcionário cadastrado com sucesso!";
             } catch (PDOException $e) {
-                $_SESSION['erro'] = "Erro ao cadastrar funcionário: " . $e->getMessage();
+                if (strpos($e->getMessage(), '1062') !== false) {
+                    $_SESSION['erro'] = "Já existe um funcionário com esse CPF.";
+                } else {
+                    $_SESSION['erro'] = "Erro ao cadastrar funcionário: " . $e->getMessage();
+                }
             }
         }
         header('Location: cadastrar_funcionario.php');
