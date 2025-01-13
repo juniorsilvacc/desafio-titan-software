@@ -26,6 +26,7 @@
         <h2>Funcionários</h2>
 
         <div class="btn_back_func">
+            <a href="pdf/gerar_pdf.php" target="_blank">Exportar para PDF</a>
             <a href="dashboard.php">Voltar para o Dashboard</a>
         </div>
 
