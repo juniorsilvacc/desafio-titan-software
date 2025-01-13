@@ -74,7 +74,7 @@
                     <td>R$ <?= number_format($bonificacao, 2, ',', '.') ?></td>
                     <td>
                         <a href="editar_funcionario.php?id=<?= $func['id_funcionario'] ?>" class="btn_edit">Editar</a>
-                        <a href="excluir_funcionario.php?id=<?= $func['id_funcionario'] ?>" onclick="return confirm('Tem certeza?')" class="btn_excluir">Excluir</a>
+                        <a href="excluir_funcionario_action.php?id=<?= $func['id_funcionario'] ?>" onclick="return confirm('Tem certeza?')" class="btn_excluir">Excluir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
