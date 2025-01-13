@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'config/conexao.php';
+    require '../config/conexao.php';
 
     // Verifique se o usuário está logado
     if (!isset($_SESSION['user_id'])) {
@@ -19,7 +19,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
     <div class="container">
@@ -40,7 +40,7 @@
         </div>
 
         <div class="logout">
-            <p><a href="logout_action.php">Sair</a></p>
+            <p><a href="../controllers/logout_action.php">Sair</a></p>
         </div>
     </div>
 </body>

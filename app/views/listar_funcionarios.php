@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'config/conexao.php';
+    require '../config/conexao.php';
 
     if (!isset($_SESSION['user_id'])) {
         header('Location: index.php');
@@ -19,14 +19,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Funcionários</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
     <div class="ls_funcionarios">
         <h2>Funcionários</h2>
 
         <div class="btn_back_func">
-            <a href="pdf/gerar_pdf.php" target="_blank">Exportar para PDF</a>
+            <a href="../pdf/gerar_pdf.php" target="_blank">Exportar para PDF</a>
             <a href="dashboard.php">Voltar para o Dashboard</a>
         </div>
 
@@ -74,7 +74,7 @@
                     <td>R$ <?= number_format($bonificacao, 2, ',', '.') ?></td>
                     <td>
                         <a href="editar_funcionario.php?id=<?= $func['id_funcionario'] ?>" class="btn_edit">Editar</a>
-                        <a href="excluir_funcionario_action.php?id=<?= $func['id_funcionario'] ?>" onclick="return confirm('Tem certeza?')" class="btn_excluir">Excluir</a>
+                        <a href="../controllers/excluir_funcionario_action.php?id=<?= $func['id_funcionario'] ?>" onclick="return confirm('Tem certeza?')" class="btn_excluir">Excluir</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

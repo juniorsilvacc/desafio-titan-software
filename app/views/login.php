@@ -1,5 +1,5 @@
 <?php
-    require 'login_action.php';
+    require '../controllers/login_action.php';
 
     $erro = isset($_SESSION['erro']) ? $_SESSION['erro'] : null;
 
@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
     <div class="form-wrapper">
@@ -38,6 +38,6 @@
         </form>
     </div>
 
-    <script src="assets/js/validacoes.js"></script>
+    <script src="../assets/js/validacoes.js"></script>
 </body>
 </html>

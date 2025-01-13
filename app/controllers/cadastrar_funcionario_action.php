@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'config/conexao.php';
+    require '../config/conexao.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $nome = $_POST['nome'];
@@ -33,7 +33,7 @@
                 }
             }
         }
-        header('Location: cadastrar_funcionario.php');
+        header('Location: ../views/cadastrar_funcionario.php');
         exit;
     }
 ?>

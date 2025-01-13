@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'config/conexao.php';
+    require '../config/conexao.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email = $_POST['email'];
@@ -19,16 +19,16 @@
             if ($user) {
                 if ($user['senha'] === $senha) { 
                     $_SESSION['user_id'] = $user['id_usuario'];
-                    header('Location: dashboard.php');
+                    header('Location: ../views/dashboard.php');
                     exit;
                 } else {
                     $_SESSION['erro'] = "Senha incorreta.";
-                    header('Location: login.php');
+                    header('Location: ../views/login.php');
                     exit;
                 }
             } else {
                 $_SESSION['erro'] = "Email e/ou senha incorreto.";
-                header('Location: login.php');
+                header('Location: ../views/login.php');
                 exit;
             }
             

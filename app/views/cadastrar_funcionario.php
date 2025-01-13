@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'config/conexao.php';
+    require '../config/conexao.php';
     
     $erro = isset($_SESSION['erro']) ? $_SESSION['erro'] : null;
     $sucesso = isset($_SESSION['sucesso']) ? $_SESSION['sucesso'] : null;
@@ -17,11 +17,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastrar Funcionário</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
     <div class="form-wrapper">
-        <form method="POST" action="cadastrar_funcionario_action.php" class="form-container">
+        <form method="POST" action="../controllers/cadastrar_funcionario_action.php" class="form-container">
             <div>
                 <a href="dashboard.php" class="btn-back">
                     Voltar para o Dashboard

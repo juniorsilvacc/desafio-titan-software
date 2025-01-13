@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'config/conexao.php';
+    require '../config/conexao.php';
 
     $erro = null;
     $sucesso = null;
@@ -38,7 +38,7 @@
         $_SESSION['erro'] = $erro;
         $_SESSION['sucesso'] = $sucesso;
 
-        header('Location: cadastrar_empresa.php');
+        header('Location: ../views/cadastrar_empresa.php');
         exit;
     }
 ?>

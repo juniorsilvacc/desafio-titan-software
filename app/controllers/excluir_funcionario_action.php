@@ -1,9 +1,9 @@
 <?php
     session_start();
-    require 'config/conexao.php';
+    require '../config/conexao.php';
 
     if (!isset($_GET['id'])) {
-        header('Location: dashboard.php');
+        header('Location: ../views/dashboard.php');
         exit;
     }
 
@@ -11,6 +11,6 @@
     $stmt = $pdo->prepare("DELETE FROM tbl_funcionario WHERE id_funcionario = :id");
     $stmt->execute(['id' => $id]);
 
-    header('Location: listar_funcionarios.php');
+    header('Location: ../views/listar_funcionarios.php');
     exit;
 ?>

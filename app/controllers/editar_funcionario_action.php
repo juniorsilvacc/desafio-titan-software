@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'config/conexao.php';
+    require '../config/conexao.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Obtém os dados enviados pelo formulário
@@ -28,10 +28,10 @@
             'id' => $id
         ]);
 
-        header('Location: dashboard.php');
+        header('Location: ../views/dashboard.php');
         exit;
     } else {
-        header('Location: dashboard.php');
+        header('Location: ../views/dashboard.php');
         exit;
     }
 ?>
