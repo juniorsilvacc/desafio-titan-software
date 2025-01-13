@@ -10,7 +10,7 @@
     $funcionarios = $pdo->query("
         SELECT f.*, e.nome AS empresa_nome
         FROM tbl_funcionario f
-        JOIN tbl_empresa e ON f.id_empresa = e.id_empresa
+        JOIN tbl_empresa e ON f.id_empresa = e.id_empresa ORDER BY f.id_funcionario ASC
     ")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
